@@ -18,12 +18,11 @@ start:
 	
 	jmp $			; Jump here - infinite loop!
 
-	text_string db 'Welcome to Yolo! An adventurous OS 1!!\n', 0
-
-	text_string2 db 'Who are you?? Do ask yourself that!', 0
+	text_string db 10, 'Welcome to Yolo! An adventurous OS 1!!', 13, 0 ; 10 -> NewLine, 13 -> CarriageReturn
+	text_string2 db 10, 'Who are you?? Do ask yourself that!', 13, 0
+	
 
 print_string:			; Routine: output string in SI to screen
-	mov dl, 10			; New Line
 	mov ah, 0Eh		; int 10h 'print char' function
 
 .repeat:
@@ -34,7 +33,6 @@ print_string:			; Routine: output string in SI to screen
 	jmp .repeat
 
 .done:
-	mov dl, 13			; Carriage return
 	ret
 
 	
