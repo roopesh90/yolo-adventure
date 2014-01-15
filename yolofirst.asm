@@ -12,16 +12,14 @@ start:
 
 	mov si, text_string	; Put string position into SI
 	call print_string	; Call our string-printing routine
-
-	;jmp $			; Jump here - infinite loop!
+	
+	mov si, text_string2	; Put string position into SI
+	call print_string	; Call our string-printing routine
+	
+	jmp $			; Jump here - infinite loop!
 
 
 	text_string db 'Welcome to Yolo! An adventurous OS 1!!', 0
-
-	mov si, text_string2	; Put string position into SI
-	call print_string	; Call our string-printing routine
-
-	;jmp $			; Jump here - infinite loop!
 
 	text_string2 db 'Who are you?? Do ask yourself that!', 0
 
